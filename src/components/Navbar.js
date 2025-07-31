@@ -17,10 +17,10 @@ export default function Navbar() {
         </a>
 
         <ul className="hidden md:flex items-center space-x-8">
-          <li><a href="#Intro" className="text-2xl hover:text-blue-600">Home</a></li>
-          <li><a href="#About" className="text-2xl hover:text-blue-600">About</a></li>
-          <li><a href="#Projects" className="text-2xl hover:text-blue-600">Projects</a></li>
-          <li><a href="#Skills" className="text-2xl hover:text-blue-600">Skills</a></li>
+          <li><a href="#Intro" className="text-3xl hover:text-blue-600">Home</a></li>
+          <li><a href="#About" className="text-3xl hover:text-blue-600">About</a></li>
+          <li><a href="#Projects" className="text-3xl hover:text-blue-600">Projects</a></li>
+          <li><a href="#Skills" className="text-3xl hover:text-blue-600">Skills</a></li>
         </ul>
       </div>
     </nav>

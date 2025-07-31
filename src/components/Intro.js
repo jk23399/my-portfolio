@@ -5,16 +5,14 @@ import profileImage from '../assets/jooho.png';
 
 export default function Intro() {
   return (
-    <section className="flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8">
+    <section id="Intro" className="flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8">
       <div className="flex flex-col md:flex-row items-center max-w-7xl w-full">
         
         <div className="w-full md:w-3/5 text-center md:text-left pr-0 md:pr-12 mb-12 md:mb-0">
           <p className="text-4xl text-gray-600 mb-2">Hey, I am Jooho Kim</p>
           <h1 className="text-2xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-            A Software Engineer <br/>Building the Future
+            A Software Engineer <br/>Building the Future<br/>
           </h1>
-          <p className="text-lg sm:text-xl text-gray-700 mb-8">
-          Majoring in Computer Science at ASU, I am on the path to becoming the best developer through the experience of applying theory to real projects.          </p>
           <a
             href="#contact" 
             className="bg-indigo-600 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-indigo-700 transition-colors duration-300"
@@ -33,7 +31,6 @@ export default function Intro() {
             />
           </div>
         </div>
-        
       </div>
     </section>
   );
