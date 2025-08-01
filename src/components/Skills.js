@@ -17,6 +17,10 @@ export default function Skills() {
               <span className="bg-indigo-100 text-indigo-800 text-lg font-medium px-4 py-2 rounded-full">Java</span>
               <span className="bg-indigo-100 text-indigo-800 text-lg font-medium px-4 py-2 rounded-full">Python</span>
               <span className="bg-indigo-100 text-indigo-800 text-lg font-medium px-4 py-2 rounded-full">C++</span>
+              <span className="bg-indigo-100 text-indigo-800 text-lg font-medium px-4 py-2 rounded-full">Calculus</span>
+              <span className="bg-indigo-100 text-indigo-800 text-lg font-medium px-4 py-2 rounded-full">Linear Algebra</span>
+              <span className="bg-indigo-100 text-indigo-800 text-lg font-medium px-4 py-2 rounded-full">Statistics</span>
+
             </div>
           </div>
           {/* Familiar With */}
