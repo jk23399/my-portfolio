@@ -16,17 +16,17 @@ export default function Skills() {
             <div className="flex flex-wrap gap-3">
               <span className="bg-indigo-100 text-indigo-800 text-lg font-medium px-4 py-2 rounded-full">Java</span>
               <span className="bg-indigo-100 text-indigo-800 text-lg font-medium px-4 py-2 rounded-full">Python</span>
-              <span className="bg-indigo-100 text-indigo-800 text-lg font-medium px-4 py-2 rounded-full">C++</span>
-              <span className="bg-indigo-100 text-indigo-800 text-lg font-medium px-4 py-2 rounded-full">Calculus</span>
-              <span className="bg-indigo-100 text-indigo-800 text-lg font-medium px-4 py-2 rounded-full">Linear Algebra</span>
-              <span className="bg-indigo-100 text-indigo-800 text-lg font-medium px-4 py-2 rounded-full">Statistics</span>
-
+              <span className="bg-indigo-100 text-indigo-800 text-lg font-medium px-4 py-2 rounded-full">Excel</span>
+              <span className="bg-indigo-100 text-indigo-800 text-lg font-medium px-4 py-2 rounded-full">PowerPoint</span>
             </div>
           </div>
           {/* Familiar With */}
           <div>
             <h3 className="text-2xl font-bold mb-6">Familiar With</h3>
             <div className="flex flex-wrap gap-3">
+              <span className="bg-yellow-100 text-yellow-800 text-lg font-medium px-4 py-2 rounded-full">C/C++</span>
+              <span className="bg-yellow-100 text-yellow-800 text-lg font-medium px-4 py-2 rounded-full">MATLAB</span>
+              <span className="bg-yellow-100 text-yellow-800 text-lg font-medium px-4 py-2 rounded-full">SQL</span>
               <span className="bg-green-100 text-green-800 text-lg font-medium px-4 py-2 rounded-full">JavaScript</span>
               <span className="bg-green-100 text-green-800 text-lg font-medium px-4 py-2 rounded-full">React</span>
               <span className="bg-green-100 text-green-800 text-lg font-medium px-4 py-2 rounded-full">HTML/CSS</span>
