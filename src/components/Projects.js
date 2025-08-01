@@ -40,16 +40,18 @@ export default function Projects() {
                   </div>
                   <div className="mt-auto flex space-x-4">
                     <a
-                      href={process.env.PUBLIC_URL + '/code/autonomousDriving.m'}
-                      download="autonomousDriving.m"
+                      href={`/view/autonomousDriving.m`}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex-1 text-center bg-gray-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors"
                     >
                       View Code
                     </a>
                     <a
-                      href="#"
-                      className="flex-1 text-center bg-gray-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors"
-                    >
+                      href="https://youtube.com/shorts/LAghSF4Ig9g?feature=share"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 text-center bg-gray-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors"                    >
                       Watch Video
                     </a>
                   </div>
