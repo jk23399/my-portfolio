@@ -1,5 +1,7 @@
 import React from 'react';
-import LeetCodeStats from './LeetCodeStats';
+import asuLogo from '../assets/asu_logo.jpeg';
+import novaLogo from '../assets/nova_logo.jpeg';
+import kangnamLogo from '../assets/kangnam_logo.jpeg';
 
 export default function About() {
   return (
@@ -14,21 +16,47 @@ export default function About() {
           </p>
         </div>
 
-        {/* --- My Skills 섹션 --- */}
+        {/* --- Education Section --- */}
         <div className="mb-20">
-          <h2 className="text-3xl font-bold mb-6 text-center md:text-left">My Skills</h2>
-          <div className="flex flex-wrap items-center gap-4"> {/* items-center 추가 */}
-            {/* --- 기존 스킬 뱃지들 --- */}
-            <span className="bg-indigo-100 text-indigo-800 text-xl font-medium px-4 py-2 rounded-full">Java</span>
-            <span className="bg-indigo-100 text-indigo-800 text-xl font-medium px-4 py-2 rounded-full">Python</span>
-            <span className="bg-indigo-100 text-indigo-800 text-xl font-medium px-4 py-2 rounded-full">C++</span>
-            <span className="bg-gray-200 text-gray-800 text-xl font-medium px-4 py-2 rounded-full">Data Analysis</span>
-          </div>
-        </div>
+          <h2 className="text-4xl font-bold mb-12 text-center md:text-left">Education</h2>
+          <ul className="space-y-12">
+            
+            {/* Education Item 1: ASU */}
+            <li className="flex items-start gap-6">
+              <img src={asuLogo} alt="Arizona State University Logo" className="w-16 h-16 object-contain flex-shrink-0" />
+              <div>
+                <h3 className="text-2xl font-bold">Arizona State University</h3>
+                <p className="mt-1 text-lg text-gray-700">Bachelor's degree, Computer Science</p>
+                <p className="mt-1 text-base text-gray-600">Aug 2023 - May 2026</p>
+                <p className="mt-2 text-lg text-gray-700">Grade: 3.99</p>
+                <strong>Skills:</strong> Java · Python · C/C++
+              </div>
+            </li>
 
-        {/* --- LeetCode Section ---*/}
-        <div className="mb-20">
-          <LeetCodeStats />
+            {/* Education Item 2: NOVA */}
+            <li className="flex items-start gap-6">
+              <img src={novaLogo} alt="Northern Virginia Community College Logo" className="w-16 h-16 object-contain flex-shrink-0" />
+              <div>
+                <h3 className="text-2xl font-bold">Northern Virginia Community College</h3>
+                <p className="mt-1 text-lg text-gray-700">Associate of Science - AS, Computer Science</p>
+                <p className="mt-1 text-base text-gray-600">Aug 2019 - May 2022</p>
+                <p className="mt-2 text-lg text-gray-700">Grade: 3.8</p>
+              </div>
+            </li>
+
+            {/* Education Item 3: Kangnam University */}
+            <li className="flex items-start gap-6">
+              <img src={kangnamLogo} alt="Kangnam University Logo" className="w-16 h-16 object-contain flex-shrink-0" />
+              <div>
+                <h3 className="text-2xl font-bold">Kangnam University</h3>
+                <p className="mt-1 text-lg text-gray-700">Business Administration and Management, General</p>
+                <p className="mt-1 text-base text-gray-600">Jan 2011 - Aug 2017</p>
+                <p className="mt-2 text-lg text-gray-700">Grade: 3.7</p>
+                <strong>Skills:</strong> Excel · PowerPoint
+
+              </div>
+            </li>
+          </ul>
         </div>
 
         {/* --- Experience 섹션 --- */}

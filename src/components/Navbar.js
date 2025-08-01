@@ -5,7 +5,7 @@ import logoImage from '../assets/Jooho_logo.png';
 
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50" relative>
+    <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50 relative">
       <div className="w-full px-8 sm:px-16 py-6 flex justify-between items-center">
         
         <a href="#Intro">

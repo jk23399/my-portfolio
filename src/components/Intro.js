@@ -11,7 +11,7 @@ export default function Intro() {
         <div className="w-full md:w-3/5 text-center md:text-left pr-0 md:pr-12 mb-12 md:mb-0">
           <p className="text-4xl text-gray-600 mb-2">Hey, I am Jooho Kim</p>
           <h1 className="text-2xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-            A Software Engineer <br/>Building the Future<br/>
+            A Software Engineer <br/>Building the Future
           </h1>
           <a
             href="#contact" 

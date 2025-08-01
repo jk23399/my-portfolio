@@ -2,6 +2,8 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import Intro from "./components/Intro";
 import About from "./components/About";
+import Projects from "./components/Projects";
+import Skills from "./components/Skills";
 
 function App() {
   return (
@@ -10,8 +12,8 @@ function App() {
       <main className="mt-16">{/* mt-16 to push content bloew the fixed navbar */}
         <Intro />
         <About />
-        {/* <Projects /> */}
-        {/* <Skills /> */}
+        <Projects />
+        <Skills />
       </main>
     </div>
   );
