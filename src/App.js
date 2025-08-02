@@ -6,7 +6,9 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import CodeViewer from "./components/CodeViewer";
-
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+// src/App.js   
 function App() {
   return (
     <BrowserRouter>
@@ -23,6 +25,8 @@ function App() {
                   <About />
                   <Projects />
                   <Skills />
+                  <Contact />
+                  <Footer />
                 </>
               }
             />

@@ -14,8 +14,8 @@ export default function Intro() {
             A Software Engineer <br/>Building the Future
           </h1>
           <a
-            href="#contact" 
-            className="bg-indigo-600 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-indigo-700 transition-colors duration-300"
+            href="#Contact" 
+            className="inline-block bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-indigo-700 transition-colors"
           >
             Get In Touch
           </a>
