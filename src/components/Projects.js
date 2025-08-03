@@ -1,8 +1,12 @@
 import React from 'react';
+
 // Import your project images
 import svdImage from '../assets/gauss.jpg';
 import statPlotImage from '../assets/7z_zip.png';
 import carImage from '../assets/car.jpg';
+// --- Add the new image for the Data Science project ---
+import worldbankHeatmapImage from '../assets/worldbank_data.png';
+
 
 export default function Projects() {
   return (
@@ -66,13 +70,60 @@ export default function Projects() {
             <h3 className="text-3xl font-bold mb-8 text-left border-b-2 border-indigo-500 pb-2">
               Data Science
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-              <div className="bg-gray-50 border-2 border-gray-200 rounded-lg p-6 flex flex-col items-center justify-center text-center h-full">
-                <h4 className="text-xl font-bold mb-2">Project Coming Soon</h4>
-                <p className="text-gray-600">
-                  This spot is reserved for a future data analysis project.
-                </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mt-8">
+              
+              {/* --- New Data Science Project Card --- */}
+              <div className="bg-white border-2 border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-lg transition-shadow flex flex-col">
+                <img
+                  src={worldbankHeatmapImage}
+                  alt="Correlation heatmap of World Bank data"
+                  className="rounded-md mb-4 border"
+                />
+                <div className="flex flex-col flex-grow">
+                  <h4 className="text-xl font-bold mb-2">
+                    Digital Finance's Impact on Developing Nations' Treasury
+                  </h4>
+                  <p className="text-gray-600 mb-4 flex-grow">
+                    Analyzed World Bank data to reveal how mobile penetration impacts financial inclusion and tax revenue in developing countries, using hypothesis testing, feature engineering, and log transformation.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">
+                      Python
+                    </span>
+                    <span className="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">
+                      Pandas
+                    </span>
+                     <span className="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">
+                      Matplotlib
+                    </span>
+                     <span className="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">
+                      Seaborn
+                    </span>
+                    <span className="bg-gray-200 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">
+                      Data Analysis
+                    </span>
+                  </div>
+                  <div className="mt-auto flex space-x-4">
+                    <a
+                      href="https://github.com/your-username/worldbank-data-analysis" // Replace with your GitHub repo link
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 text-center bg-gray-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors"
+                    >
+                      View Code
+                    </a>
+                    <a
+                      href="/data-science-report" // Replace with the link to your detailed report page
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 text-center bg-gray-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors"
+                    >
+                      View Report
+                    </a>
+                  </div>
+                </div>
               </div>
+
             </div>
           </div>
 
