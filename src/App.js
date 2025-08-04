@@ -8,13 +8,17 @@ import Skills from "./components/Skills";
 import CodeViewer from "./components/CodeViewer";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-// src/App.js   
+import DataScienceReport from "./components/DataScienceReport";
+import ScrollToTop from "./components/ScrollToTop";
+
+// src/App.js
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop /> {/* 2. <BrowserRouter> */}
       <div className="App">
         <Navbar />
-        <main className="mt-16">
+        <main className="mt-36">
           <Routes>
             {/* Home route renders all main sections */}
             <Route
@@ -33,6 +37,10 @@ function App() {
 
             {/* CodeViewer route for viewing raw code files */}
             <Route path="/view/:filename" element={<CodeViewer />} />
+
+            {/* --- Add the new route for your Data Science Report --- */}
+            <Route path="/data-science-report" element={<DataScienceReport />} />
+
           </Routes>
         </main>
       </div>

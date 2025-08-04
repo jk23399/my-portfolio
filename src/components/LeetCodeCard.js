@@ -27,7 +27,7 @@ export default function LeetCodeCard() {
         <div className="space-y-3 text-lg">
           <div className="flex justify-between items-center">
             <span className="font-medium">Python 3</span>
-            <span className="text-gray-600">60 problems solved</span>
+            <span className="text-gray-600">65 problems solved</span>
           </div>
           <div className="flex justify-between items-center">
             <span className="font-medium">C++</span>

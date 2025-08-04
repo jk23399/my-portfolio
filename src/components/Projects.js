@@ -1,11 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // <a> 태그 대신 Link를 import 합니다.
 
 // Import your project images
 import svdImage from '../assets/gauss.jpg';
 import statPlotImage from '../assets/7z_zip.png';
 import carImage from '../assets/car.jpg';
-// --- Add the new image for the Data Science project ---
-import worldbankHeatmapImage from '../assets/worldbank_data.png';
+import scatterByRegion from '../assets/scatter_by_region.png'; // Placeholder for scatter plot by region
 
 
 export default function Projects() {
@@ -68,23 +68,23 @@ export default function Projects() {
           {/* --- Category 2: Data Science --- */}
           <div>
             <h3 className="text-3xl font-bold mb-8 text-left border-b-2 border-indigo-500 pb-2">
-              Data Science
+              Data Science / Data Analysis
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mt-8">
               
-              {/* --- New Data Science Project Card --- */}
+              {/* --- Data Science Project Card --- */}
               <div className="bg-white border-2 border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-lg transition-shadow flex flex-col">
                 <img
-                  src={worldbankHeatmapImage}
+                  src={scatterByRegion}
                   alt="Correlation heatmap of World Bank data"
                   className="rounded-md mb-4 border"
                 />
                 <div className="flex flex-col flex-grow">
                   <h4 className="text-xl font-bold mb-2">
-                    Digital Finance's Impact on Developing Nations' Treasury
+                    The Impact of Digital Finance on National Treasury
                   </h4>
                   <p className="text-gray-600 mb-4 flex-grow">
-                    Analyzed World Bank data to reveal how mobile penetration impacts financial inclusion and tax revenue in developing countries, using hypothesis testing, feature engineering, and log transformation.
+                    Conducted a full-cycle analysis of World Bank data to show that mobile finance expansion significantly boosts tax revenue in developing economies (≈0.087 slope, p &lt; 0.001), while advanced markets exhibit diminishing returns. Included hypothesis testing, balanced panel filtering, and targeted feature engineering.
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     <span className="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">
@@ -105,21 +105,19 @@ export default function Projects() {
                   </div>
                   <div className="mt-auto flex space-x-4">
                     <a
-                      href="https://github.com/your-username/worldbank-data-analysis" // Replace with your GitHub repo link
+                      href="https://github.com/jk23399/worldbank-data-analysis/blob/main/mobile_tax_revenue.ipynb" // 여기에 깃허브 레포지토리 링크를 넣어주세요
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 text-center bg-gray-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors"
                     >
                       View Code
                     </a>
-                    <a
-                      href="/data-science-report" // Replace with the link to your detailed report page
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <Link
+                      to="/data-science-report" 
                       className="flex-1 text-center bg-gray-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors"
                     >
                       View Report
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -127,10 +125,10 @@ export default function Projects() {
             </div>
           </div>
 
-          {/* --- Category 3: Mathematics & Algorithms --- */}
+          {/* --- Category 3: Mathematics --- */}
           <div>
             <h3 className="text-3xl font-bold mb-8 text-left border-b-2 border-indigo-500 pb-2">
-              Mathematics & Algorithms
+              Mathematics
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
               

@@ -1,51 +1,48 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { Link, useLocation } from 'react-router-dom';
 import logoImage from '../assets/Jooho_logo.png';
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation(); // Get current URL information
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 200);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  // --- Active link styling ---
+  const activeLinkClass = "text-indigo-600 font-bold";
+  const defaultLinkClass = "text-3xl hover:text-blue-600 transition-colors";
 
   return (
-    <nav
-      className={
-        `fixed bg-white shadow-lg z-50 transition-all duration-300
-        ${scrolled ? 'right-12 w-48 top-0 bottom-0 overflow-y-auto' : 'right-0 w-full h-auto top-0'}
-        `
-      }
-    >
-      <div
-        className={`flex transition-all duration-300
-          ${scrolled
-            ? 'flex-col items-center justify-start py-8 space-y-8'
-            : 'justify-between items-center w-full px-8 sm:px-16 py-6'}`
-      }
-      >
-        <a href="#Intro">
+    // --- Main navigation bar container ---
+    // It's fixed to the top, full-width, with a white background and shadow.
+    <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+      <div className="flex justify-between items-center w-full max-w-7xl mx-auto px-8 sm:px-16 py-4">
+        
+        {/* --- Logo --- */}
+        {/* Clicking the logo always takes you to the top of the main page. */}
+        <Link to="/#Intro">
           <img
             src={logoImage}
             alt="Jooho Kim Signature Logo"
-            className={`${scrolled ? 'h-16' : 'h-32'}`}
+            className="h-16" // Fixed height for the logo
           />
-        </a>
+        </Link>
 
-        <ul
-          className={`transition-all duration-300 text-right
-            ${scrolled
-              ? 'flex flex-col space-y-6 mt-4'
-              : 'hidden md:flex items-center space-x-8'}`
-        }
-        >
-          <li><a href="#Intro" className="text-3xl hover:text-blue-600">Home</a></li>
-          <li><a href="#About" className="text-3xl hover:text-blue-600">About</a></li>
-          <li><a href="#Projects" className="text-3xl hover:text-blue-600">Projects</a></li>
-          <li><a href="#Skills" className="text-3xl hover:text-blue-600">Skills</a></li>
-          <li><a href="#Contact" className="text-3xl hover:text-blue-600">Contact</a></li>
+        {/* --- Navigation Links --- */}
+        {/* The list is always displayed horizontally on medium screens and up. */}
+        <ul className="hidden md:flex items-center space-x-8">
+          <li><Link to="/#Intro" className={defaultLinkClass}>Home</Link></li>
+          <li><Link to="/#About" className={defaultLinkClass}>About</Link></li>
+          <li>
+            <Link 
+              to="/#Projects" 
+              // The 'Projects' link is highlighted when on the data science report page.
+              className={`${defaultLinkClass} ${location.pathname === '/data-science-report' ? activeLinkClass : ''}`}
+            >
+              Projects
+            </Link>
+          </li>
+          <li><Link to="/#Skills" className={defaultLinkClass}>Skills</Link></li>
+          <li><Link to="/#Contact" className={defaultLinkClass}>Contact</Link></li>
         </ul>
+
       </div>
     </nav>
   );
