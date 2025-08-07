@@ -13,7 +13,7 @@ export default function Navbar() {
     // --- Main navigation bar container ---
     // It's fixed to the top, full-width, with a white background and shadow.
     <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
-      <div className="flex justify-between items-center w-full max-w-7xl mx-auto px-8 sm:px-16 py-4">
+      <div className="flex justify-between items-center w-full max-w-7xl mx-auto px-4 sm:px-8 py-4">
         
         {/* --- Logo --- */}
         {/* Clicking the logo always takes you to the top of the main page. */}
@@ -21,7 +21,7 @@ export default function Navbar() {
           <img
             src={logoImage}
             alt="Jooho Kim Signature Logo"
-            className="h-16" // Fixed height for the logo
+            className="h-24" // Fixed height for the logo
           />
         </Link>
 

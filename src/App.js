@@ -10,6 +10,9 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import DataScienceReport from "./components/DataScienceReport";
 import ScrollToTop from "./components/ScrollToTop";
+import SemiconductorReport from './components/SemiconductorReport'; // 파일의 실제 위치에 맞게 경로를 수정하세요
+import LoanApprovalReport from './components/LoanApprovalReport';
+import InterestRateReport from './components/InterestRateReport';
 
 // src/App.js
 function App() {
@@ -40,8 +43,16 @@ function App() {
 
             {/* --- Add the new route for your Data Science Report --- */}
             <Route path="/data-science-report" element={<DataScienceReport />} />
+                        
+            {/* --- Add the new route for your Data Science Report --- */}
+            <Route path="/trending-stock-report" element={<SemiconductorReport />} />
 
-          </Routes>
+            {/* --- Add the new route for your Data Science Report --- */}
+            <Route path="/loan-approval-report" element={<LoanApprovalReport />} /> 
+
+            {/* --- Add the new route for your Data Science Report --- */}
+            <Route path="/interest-rate-report" element={<InterestRateReport />} />
+            </Routes>
         </main>
       </div>
     </BrowserRouter>

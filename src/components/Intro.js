@@ -15,7 +15,7 @@ export default function Intro() {
           </h1>
           <a
             href="#Contact" 
-            className="inline-block bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-indigo-700 transition-colors"
+            className="inline-block bg-gray-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-gray-700 transition-colors"
           >
             Get In Touch
           </a>

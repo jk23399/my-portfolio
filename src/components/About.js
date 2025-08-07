@@ -5,7 +5,7 @@ import kangnamLogo from '../assets/kangnam_logo.jpeg';
 
 export default function About() {
   return (
-    <section id="About" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="About" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray">
       <div className="max-w-7xl mx-auto">
         
         {/* --- About Me 섹션 --- */}
