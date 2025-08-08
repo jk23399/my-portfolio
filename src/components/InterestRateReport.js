@@ -7,16 +7,15 @@ import lendingClub from '../assets/interest_rate_prediction_pics/LendingClub.png
 export default function InterestRateReport() {
   return (
     <section id="report" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
 
         {/* --- Hero Header --- */}
         <header className="mb-12 text-center">
           <h1 className="text-5xl lg:text-6xl font-extrabold text-gray-900">
-            Interest Rate <br/>Regression Model
+            Interest Rate Regression Model
           </h1>
           <h2 className="mt-4 text-2xl lg:text-3xl font-semibold text-gray-700">
-            A Practical Approach to Automated Loan Pricing
-          </h2>
+            A Loan Pricing Engine, Part II: Interest Rate Prediction          </h2>
           <div className="mt-6 flex items-center justify-center text-gray-500 text-sm space-x-3">
             <img
               src={avatar}

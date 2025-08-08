@@ -8,11 +8,14 @@ import cibilScatterPlot from '../assets/loan_approval_prediction_pics/cibil_scat
 import featureImportance from '../assets/loan_approval_prediction_pics/rb_feature_importance.png';
 import loanTermChart from '../assets/loan_approval_prediction_pics/approval_by_loan_term.png';
 import rocCurve from '../assets/loan_approval_prediction_pics/ROC_curve.png';
+import rocCurveLow from '../assets/loan_approval_prediction_pics/roc_curve_low_cibil.png';
+import featureImportanceLow from '../assets/loan_approval_prediction_pics/feature_importance_low_credit.jpg';
+import approvalByloanTerm from '../assets/loan_approval_prediction_pics/approval_rate_by_loan_term_low_cibil.jpg';
 
 export default function LoanApprovalReport() {
   return (
     <section id="report" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-8xl mx-auto">
 
         {/* --- Hero Header --- */}
         <header className="mb-12 text-center">
@@ -20,7 +23,7 @@ export default function LoanApprovalReport() {
             Loan Approval Prediction
           </h1>
           <h2 className="mt-4 text-2xl lg:text-3xl font-semibold text-gray-700">
-            A Data-Driven Approach to Credit Risk Assessment
+            A Loan Pricing Engine, Part I: Segmented Risk & Approval Modeling
           </h2>
           <div className="mt-6 flex items-center justify-center text-gray-500 text-sm space-x-3">
             <img
@@ -62,14 +65,14 @@ export default function LoanApprovalReport() {
           </a>
         </div>
 
-        {/* --- 1. Introduction (수정된 내용) --- */}
+        {/* --- 1. Introduction --- */}
         <article className="prose lg:prose-xl w-full max-w-none mx-auto">
           <h2 className="text-3xl font-bold border-b-2 pb-2">1. Introduction</h2>
           <p className="mt-4">
-            This project builds a loan approval prediction model using a publicly available dataset from Kaggle. The ultimate goal is for the model to be used in a loan approval automation program that will be developed in the future. The primary focus of this project was to identify the most significant factors influencing the success or failure of a loan application.
+            This project analyzes a loan approval dataset to build a predictive model, with the ultimate goal of designing a sophisticated, automated underwriting system. The primary focus was to move beyond a simple, single-policy model and uncover the nuanced factors that influence credit decisions for different borrower segments.
           </p>
           <p>
-            Since the dataset obtained from Kaggle was already pre-processed, the data processing stage was omitted. Through this project, the objectives were: first, to strive to understand the data through data wrangling and analysis; second, to gain machine learning experience by building a predictive model; and finally, to learn and experience data visualization techniques using Tableau.
+            Using a pre-processed dataset from Kaggle, the workflow centered on in-depth exploratory data analysis (EDA) and the development of segmented machine learning models. The key discovery was a dual-strategy risk assessment employed by the lender, which led to the creation of a specialized model for low-credit-score applicants.
           </p>
         </article>
         
@@ -117,47 +120,56 @@ export default function LoanApprovalReport() {
           </figure>
         </article>
 
-        {/* --- 3. Predictive Modeling --- */}
+        {/* --- 3. Predictive Modeling & Segmentation Analysis --- */}
         <article className="prose lg:prose-xl w-full max-w-none mx-auto mt-12">
-          <h2 className="text-3xl font-bold border-b-2 pb-2">3. Predictive Modeling</h2>
+          <h2 className="text-3xl font-bold border-b-2 pb-2">3. Predictive Modeling & Segmentation Analysis</h2>
           <p className="mt-4">
-            To quantify the predictive power of the features, a Random Forest Classifier was trained on all numerical data. This model achieved a near-perfect AUC score of 0.998 on the test set, confirming that the features in the dataset are highly predictive of loan outcomes.
+            A Random Forest Classifier trained on the full dataset achieved a near-perfect AUC score of 0.998. The model's feature importance was definitive: `cibil_score` accounted for over 82% of the model's predictive power, confirming that a high credit score is the primary driver of loan approval.
           </p>
-          <p>
-             The model's feature importance was analyzed to validate the findings from the EDA. The results were definitive: `cibil_score` accounted for over 82% of the model's predictive power. This confirms that while other factors like loan term and assets contribute, they are minor compared to the applicant's credit history.
-          </p>
+          {/* This figure now uses the 'rocCurve' from your import list */}
           <figure className="my-8 text-center">
-            <img src={featureImportance} alt="Random Forest Feature Importances" className="max-w-4xl mx-auto rounded-lg shadow-lg object-contain border"/>
-            <figcaption className="mt-3 text-sm text-gray-500">Fig. 5 – CIBIL Score is the overwhelmingly dominant feature</figcaption>
+            <img src={rocCurve} alt="ROC Curve for the Low-Credit Cohort Model" className="max-w-2xl mx-auto rounded-lg shadow-lg object-contain border"/>
+            <figcaption className="mt-3 text-sm text-gray-500">Fig. 6 – ROC Curve (AUC = 0.998)</figcaption>
+          </figure>
+          {/* This figure now uses the 'featureImportance' from your import list */}
+           <figure className="my-8 text-center">
+            <img src={featureImportance} alt="Random Forest Feature Importances for Low-Credit Cohort" className="max-w-4xl mx-auto rounded-lg shadow-lg object-contain border"/>
+            <figcaption className="mt-3 text-sm text-gray-500">Fig. 7 – CIBIL Score is the overwhelmingly dominant feature</figcaption>
           </figure>
         </article>
 
-        {/* --- ROC Curve --- */}
+          <p>
+            However, this initial model revealed a limitation: with a near-certain approval rate for applicants with CIBIL scores above 580, it offered little meaningful insight into more nuanced credit decisions. To address this, the analysis was refocused on the low-credit-score segment (CIBIL &lt; 580).
+          </p>
+          <p>
+            A new, specialized Random Forest model was built for this cohort. This segmented model achieved exceptional performance, with an **ROC-AUC of 0.994** and an **F1-Score of 0.932**. The feature importance for this new model revealed a different decision logic: for the low-credit segment, both credit score and loan term are the most critical factors. A strong tendency to approve only short-term loans was observed, suggesting a distinct risk management strategy for this group.
+          </p>
+          {/* This figure now uses the 'rocCurve' from your import list */}
           <figure className="my-8 text-center">
-            <img src={rocCurve} alt="ROC Curve for Logistic Regression Model" className="max-w-2xl mx-auto rounded-lg shadow-lg object-contain border"/>
-            <figcaption className="mt-3 text-sm text-gray-500">Fig. 6 – ROC Curve (AUC = 0.998)</figcaption>
+            <img src={rocCurveLow} alt="ROC Curve for the Low-Credit Cohort Model" className="max-w-2xl mx-auto rounded-lg shadow-lg object-contain border"/>
+            <figcaption className="mt-3 text-sm text-gray-500">Fig. 8 – ROC Curve for the specialized low-credit cohort model (AUC = 0.994)</figcaption>
+          </figure>
+          {/* This figure now uses the 'featureImportance' from your import list */}
+           <figure className="my-8 text-center">
+            <img src={featureImportanceLow} alt="Random Forest Feature Importances for Low-Credit Cohort" className="max-w-4xl mx-auto rounded-lg shadow-lg object-contain border"/>
+            <figcaption className="mt-3 text-sm text-gray-500">Fig. 9 – Feature Importance for the low-credit cohort model</figcaption>
           </figure>
 
-        {/* --- 4. Conclusion --- */}
+        {/* --- 4. Conclusion & Future Application --- */}
         <article className="prose lg:prose-xl w-full max-w-none mx-auto mt-12 mb-20">
-          <h2 className="text-3xl font-bold border-b-2 pb-2">4. Conclusion</h2>
+          <h2 className="text-3xl font-bold border-b-2 pb-2">4. Conclusion & Future Application</h2>
           <p className="mt-4">
-            This analysis clearly confirmed that the **CIBIL credit score is the most decisive variable** in predicting loan approval. A distinct **"approval threshold" was identified around a score of 550**; applicants surpassing this score saw their approval rates surge to over 90%, largely regardless of the requested loan amount.
+            This analysis concludes that the lender employs a dual-strategy approach to risk. For high-credit applicants (&gt;580), risk is likely managed by pricing it into the interest rate. For low-credit applicants (&lt;580), risk is managed by strictly limiting approvals to short-term loans only.
           </p>
 
-          <h3 className="text-2xl font-semibold mt-6">Business Insight & Future Work</h3>
+          {/* This figure shows the loan approval for low-credit applicants */}
+           <figure className="my-8 text-center">
+            <img src={approvalByloanTerm} alt="Random Forest Feature Importances for Low-Credit Cohort" className="max-w-4xl mx-auto rounded-lg shadow-lg object-contain border"/>
+            <figcaption className="mt-3 text-sm text-gray-500">Fig. 10 – Approval Rate by Loan Term for the low-credit cohort model</figcaption>
+          </figure>
+
           <p>
-            These findings suggest the lender employs a **two-stage risk assessment process**: a primary automated screening based almost entirely on CIBIL score, followed by a secondary review of other factors. It can be inferred that for creditworthy applicants seeking large loans, the institution likely manages risk not by outright rejection, but by **pricing the risk into the loan terms**—most likely by adjusting the interest rate, a variable not present in this dataset.
-          </p>
-          <p>
-            The ultimate vision for this project is to serve as the core logic for a fully automated loan underwriting system. Acknowledging that a real-world application cannot directly ask for a user's credit score, the next phase is to build a **dual-model pipeline**:
-          </p>
-          <ul className="mt-4">
-            <li><strong>Proxy Score Model:</strong> A regression model trained on a richer dataset to predict a proxy credit score using non-sensitive inputs like income, assets, and dependents.</li>
-            <li><strong>Approval Model:</strong> The predicted proxy score would then be fed into the classification model developed in this project to determine the final approval status.</li>
-          </ul>
-          <p>
-            Ultimately, this pipeline could be extended with a third model that predicts an optimal interest rate, completing the transition from a simple classification task to a sophisticated, end-to-end system capable of making nuanced, risk-based loan decisions.
+            Based on these findings, a sophisticated, two-tiered approval model has been developed. This segmented model is intended to be used as the core approval engine for a future program that will predict custom interest rates and recommend optimal loan products to qualified applicants.
           </p>
         </article>
       </div>

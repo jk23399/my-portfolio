@@ -1,9 +1,8 @@
-import React from 'react';
-
 import avatar from '../assets/your_avatar.jpg';
 import interestRateEstimator from '../assets/interestEstimator.gif';
 import loanAnalysisGif from '../assets/loan_approval_prediction_pics/loan_analysis.gif';
 import interestRateBarchart from '../assets/interest_rate_prediction_pics/binned_comparison.png';
+import systemArchitecture from '../assets/interest_rate_estimator/sys_arc.png';
 
 export default function InterestRateEstimatorReport() {
   return (
@@ -63,7 +62,7 @@ export default function InterestRateEstimatorReport() {
             the applicant. Both models originated from prior data-science work, using datasets that
             were manually cleaned and refined before training. The goal here goes beyond modeling:
             to package the models into a production-ready web app and deploy it for real, hands-on
-            usage.
+            usage. <br /> You can find the data EDA process, modeling steps, and model performance explanation in the links below.
           </p>
         </article>
 
@@ -111,61 +110,14 @@ export default function InterestRateEstimatorReport() {
             2. System Architecture
         </h2>
 
-        {/* Diagram */}
-        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="320" viewBox="0 0 900 320">
-            {/* Frontend */}
-            <g transform="translate(16,16)">
-            <rect width="200" height="80" rx="10" className="stroke-indigo-400 fill-white" />
-            <text x="100" y="24" textAnchor="middle" className="fill-gray-800 text-[14px] font-bold">Frontend</text>
-            <text x="100" y="44" textAnchor="middle" className="fill-gray-500 text-[12px]">React + Tailwind (Vercel)</text>
-            </g>
-
-            {/* API */}
-            <g transform="translate(260,30)">
-            <rect width="160" height="60" rx="10" className="stroke-amber-400 fill-white" />
-            <text x="80" y="24" textAnchor="middle" className="fill-gray-800 text-[12px] font-semibold">API (Flask)</text>
-            <text x="80" y="44" textAnchor="middle" className="fill-gray-500 text-[11px]">POST /predict</text>
-            </g>
-
-            {/* Classifier */}
-            <g transform="translate(460,10)">
-            <rect width="120" height="50" rx="10" className="stroke-emerald-400 fill-white" />
-            <text x="60" y="22" textAnchor="middle" className="fill-gray-800 text-[12px] font-semibold">Classifier</text>
-            </g>
-
-            {/* Regressor */}
-            <g transform="translate(460,80)">
-            <rect width="120" height="50" rx="10" className="stroke-rose-400 fill-white" />
-            <text x="60" y="22" textAnchor="middle" className="fill-gray-800 text-[12px] font-semibold">Regressor</text>
-            </g>
-
-            {/* Model Server */}
-            <g transform="translate(620,40)">
-            <rect width="200" height="80" rx="10" className="stroke-purple-400 fill-white" />
-            <text x="100" y="24" textAnchor="middle" className="fill-gray-800 text-[14px] font-bold">Model Serving</text>
-            <text x="100" y="44" textAnchor="middle" className="fill-gray-500 text-[12px]">Scikit-learn Models</text>
-            </g>
-
-            {/* Deployment */}
-            <g transform="translate(16,140)">
-            <rect width="804" height="60" rx="10" className="stroke-gray-400 fill-white" />
-            <text x="402" y="24" textAnchor="middle" className="fill-gray-800 text-[14px] font-bold">Deployment</text>
-            <text x="402" y="44" textAnchor="middle" className="fill-gray-500 text-[12px]">Frontend: Vercel | Backend: Render</text>
-            </g>
-
-            {/* Arrows */}
-            <line x1="216" y1="56" x2="260" y2="60" stroke="#666" strokeWidth="2" markerEnd="url(#arrow)" />
-            <line x1="420" y1="60" x2="460" y2="35" stroke="#666" strokeWidth="2" markerEnd="url(#arrow)" />
-            <line x1="420" y1="60" x2="460" y2="105" stroke="#666" strokeWidth="2" markerEnd="url(#arrow)" />
-            <line x1="580" y1="35" x2="620" y2="80" stroke="#666" strokeWidth="2" markerEnd="url(#arrow)" />
-            <line x1="580" y1="105" x2="620" y2="80" stroke="#666" strokeWidth="2" markerEnd="url(#arrow)" />
-
-            <defs>
-            <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
-                <path d="M0,0 L0,6 L9,3 z" fill="#666" />
-            </marker>
-            </defs>
-        </svg>
+        <img
+          src={systemArchitecture}
+          alt=""
+          className="w-full rounded-lg shadow-lg object-cover"
+        />
+        <figcaption className="mt-3 text-center text-sm text-gray-500">
+          Fig. 2 – System Architecture Overview
+        </figcaption>
 
         {/* Summary */}
         <p className="mt-4">
