@@ -14,6 +14,7 @@ import SemiconductorReport from './components/SemiconductorReport';
 import LoanApprovalReport from './components/LoanApprovalReport';
 import InterestRateReport from './components/InterestRateReport';
 import InterestRateEstimatorReport from "./components/InterestRateEstimatorReport"; // <-- fixed name
+import FoundryEffectReport from "./components/FoundryEffectReport"; // Import the new report component
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
             <Route path="/trending-stock-report" element={<SemiconductorReport />} />
             <Route path="/loan-approval-report" element={<LoanApprovalReport />} />
             <Route path="/interest-rate-report" element={<InterestRateReport />} />
+            <Route path="/foundry-effect-report" element={<FoundryEffectReport />} />
 
             {/* App “View Program” page for the estimator */}
             <Route path="/credit-risk-analyzer" element={<InterestRateEstimatorReport />} />
