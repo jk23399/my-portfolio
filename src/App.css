@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+
+/* Zebra sections */
+main.zebra > section:nth-of-type(odd)  { background-color: #ffffff; }
+main.zebra > section:nth-of-type(even) { background-color: #f9fafb; } /* ≈ Tailwind bg-gray-50 */
+main.zebra > section { padding-top: 5rem; padding-bottom: 5rem; }

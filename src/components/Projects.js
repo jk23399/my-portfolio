@@ -8,7 +8,6 @@ import trendingStockDashboard from '../assets/dashboard.gif';
 import interestRateEsimator from '../assets/interestEstimator.gif';
 import interestRateBarchart from '../assets/interest_rate_prediction_pics/binned_comparison.png';
 import loanAnalysisGif from '../assets/loan_approval_prediction_pics/loan_analysis.gif';
-import foundryMain from '../assets/foundry_benchmark/tableau.jpg';
 
 export default function Projects() {
   return (
@@ -144,87 +143,6 @@ export default function Projects() {
             {/* Put ALL DS cards in the SAME grid so none becomes full width */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mt-8 items-stretch">
 
-              {/* Digital Finance */}
-              <div className="bg-white border-2 border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-lg transition-shadow flex flex-col h-full">
-                <img
-                  src={scatterByRegion}
-                  alt="Correlation heatmap of World Bank data"
-                  className="rounded-md mb-4 border"
-                />
-                <div className="flex flex-col flex-grow">
-                  <h4 className="text-xl font-bold mb-2">
-                    The Impact of Digital Finance on National Treasury
-                  </h4>
-                  <p className="text-gray-600 mb-4 flex-grow">
-                    Conducted a full-cycle analysis of World Bank data to show that mobile finance expansion significantly boosts tax revenue in developing economies (≈0.087 slope, p &lt; 0.001), while advanced markets exhibit diminishing returns. Included hypothesis testing, balanced panel filtering, and targeted feature engineering.
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">Python</span>
-                    <span className="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">Pandas</span>
-                    <span className="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">Matplotlib</span>
-                    <span className="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">Seaborn</span>
-                    <span className="bg-gray-200 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">Data Analysis</span>
-                  </div>
-                  <div className="mt-auto flex space-x-4">
-                    <a
-                      href="https://github.com/jk23399/worldbank-data-analysis/blob/main/mobile_tax_revenue.ipynb"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 text-center bg-gray-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors"
-                    >
-                      View Code
-                    </a>
-                    <Link
-                      to="/data-science-report" 
-                      className="flex-1 text-center bg-gray-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors"
-                    >
-                      View Report
-                    </Link>
-                  </div>
-                </div>
-              </div>
-
-              {/* Trending Stocks */}
-              <div className="bg-white border-2 border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-lg transition-shadow flex flex-col h-full">
-                <img
-                  src={trendingStockDashboard}
-                  alt="Dashboard for trending stock analysis"
-                  className="rounded-md mb-4 border"
-                />
-                <div className="flex flex-col flex-grow">
-                  <h4 className="text-xl font-bold mb-2">
-                    ARIMA vs. LSTM: A Performance Comparison of Time-Series Forecasting Models on Major Semiconductor Stocks
-                  </h4>
-                  <p className="text-gray-600 mb-4 flex-grow">
-                    This project compares ARIMA (classical) and LSTM (deep learning) models for stock price forecasting. Following an exploratory data analysis of the semiconductor market (NVIDIA, AMD, Intel), NVIDIA stock was used as a case study for the model comparison. The project culminates in an interactive Dash dashboard showcasing the LSTM model's superior performance in capturing market volatility.
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">Python</span>
-                    <span className="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">TensorFlow</span>
-                    <span className="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">Dashboard</span>
-                    <span className="bg-gray-200 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">Scikit-learn</span>
-                    <span className="bg-gray-200 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">API</span>
-                    <span className="bg-gray-200 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">Time-series Analysis</span>
-                  </div>
-                  <div className="mt-auto flex space-x-4">
-                    <a
-                      href="https://github.com/jk23399/Time-Serie_Forecasting_Models/blob/main/notebooks/01_data_exploaration.ipynb"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 text-center bg-gray-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors"
-                    >
-                      View Code
-                    </a>
-                    <Link
-                      to="/trending-stock-report"
-                      className="flex-1 text-center bg-gray-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors"
-                    >
-                      View Report
-                    </Link>
-                  </div>
-                </div>
-              </div>
-
               {/* Loan Approval Prediction & Interactive Dashboard */}
               <div className="bg-white border-2 border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-lg transition-shadow flex flex-col h-full">
                 <img
@@ -305,29 +223,31 @@ export default function Projects() {
                 </div>
               </div>
 
-              {/* Benchmark Score Prediction by Foundry */}
+              {/* Trending Stocks */}
               <div className="bg-white border-2 border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-lg transition-shadow flex flex-col h-full">
                 <img
-                  src={foundryMain}
-                  alt="Dashboard showing CPU performance analysis by foundry"
+                  src={trendingStockDashboard}
+                  alt="Dashboard for trending stock analysis"
                   className="rounded-md mb-4 border"
                 />
                 <div className="flex flex-col flex-grow">
                   <h4 className="text-xl font-bold mb-2">
-                    Predicting CPU Benchmarks: The Foundry Effect
+                    ARIMA vs. LSTM: A Performance Comparison of Time-Series Forecasting Models on Major Semiconductor Stocks
                   </h4>
                   <p className="text-gray-600 mb-4 flex-grow">
-                    Seeking to predict CPU benchmark scores, this analysis uncovered a strong "foundry effect" where TSMC was a top performance predictor. Statistical tests confirmed TSMC's significant lead, with the final conclusion being that their high benchmarks are a direct result of a business strategy focused on producing premium, high-performance chips for a demanding client base.
+                    This project compares ARIMA (classical) and LSTM (deep learning) models for stock price forecasting. Following an exploratory data analysis of the semiconductor market (NVIDIA, AMD, Intel), NVIDIA stock was used as a case study for the model comparison. The project culminates in an interactive Dash dashboard showcasing the LSTM model's superior performance in capturing market volatility.
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">Pandas</span>
+                    <span className="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">Python</span>
+                    <span className="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">TensorFlow</span>
+                    <span className="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">Dashboard</span>
                     <span className="bg-gray-200 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">Scikit-learn</span>
-                    <span className="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">XGBoost</span>
-                    <span className="bg-red-100 text-red-800 text-sm font-medium px-3 py-1 rounded-full">ANOVA</span>
+                    <span className="bg-gray-200 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">API</span>
+                    <span className="bg-gray-200 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">Time-series Analysis</span>
                   </div>
                   <div className="mt-auto flex space-x-4">
                     <a
-                      href="https://github.com/jk23399/credit_risk_analyzer/https://github.com/jk23399/foundry-bechmark-t-test/main/notebooks/02_interest_rate_prediction.ipynb"
+                      href="https://github.com/jk23399/Time-Serie_Forecasting_Models/blob/main/notebooks/01_data_exploaration.ipynb"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 text-center bg-gray-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors"
@@ -335,7 +255,47 @@ export default function Projects() {
                       View Code
                     </a>
                     <Link
-                      to="/foundry-effect-report"
+                      to="/trending-stock-report"
+                      className="flex-1 text-center bg-gray-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors"
+                    >
+                      View Report
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              {/* Digital Finance */}
+              <div className="bg-white border-2 border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-lg transition-shadow flex flex-col h-full">
+                <img
+                  src={scatterByRegion}
+                  alt="Correlation heatmap of World Bank data"
+                  className="rounded-md mb-4 border"
+                />
+                <div className="flex flex-col flex-grow">
+                  <h4 className="text-xl font-bold mb-2">
+                    The Impact of Digital Finance on National Treasury
+                  </h4>
+                  <p className="text-gray-600 mb-4 flex-grow">
+                    Conducted a full-cycle analysis of World Bank data to show that mobile finance expansion significantly boosts tax revenue in developing economies (≈0.087 slope, p &lt; 0.001), while advanced markets exhibit diminishing returns. Included hypothesis testing, balanced panel filtering, and targeted feature engineering.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">Python</span>
+                    <span className="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">Pandas</span>
+                    <span className="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">Matplotlib</span>
+                    <span className="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">Seaborn</span>
+                    <span className="bg-gray-200 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">Data Analysis</span>
+                  </div>
+                  <div className="mt-auto flex space-x-4">
+                    <a
+                      href="https://github.com/jk23399/worldbank-data-analysis/blob/main/mobile_tax_revenue.ipynb"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 text-center bg-gray-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors"
+                    >
+                      View Code
+                    </a>
+                    <Link
+                      to="/data-science-report" 
                       className="flex-1 text-center bg-gray-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors"
                     >
                       View Report

@@ -8,11 +8,12 @@ export default function Intro() {
     <section id="Intro" className="flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8">
       <div className="flex flex-col md:flex-row items-center max-w-7xl w-full">
         
-        <div className="w-full md:w-3/5 text-center md:text-left pr-0 md:pr-12 mb-12 md:mb-0">
-          <p className="text-4xl text-gray-600 mb-2">Hey, I am Jooho Kim</p>
+        <div className="w-full md:w-3/5 text-center md:text-left pr-0 md:pr-12 mb-12 md:mb-4">
+          <p className="text-4xl text-gray-600 mb-4">Hey, I am Jooho Kim</p>
           <h1 className="text-2xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-            Software Engineer <br/>Building the Future
+            Data-minded Software Engineer <br/>
           </h1>
+          <p className="text-4xl text-gray-600 mb-4">I design APIs and ML pipelines that turn messy data into useful products.</p>
           <a
             href="#Contact" 
             className="inline-block bg-gray-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-gray-700 transition-colors"
