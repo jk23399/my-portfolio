@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // Import your project images
-import carImage from '../assets/car.jpg';
+import carImage from '../assets/ai_car/AI_CAR.gif';
 import scatterByRegion from '../assets/scatter_by_region.png';
 import trendingStockDashboard from '../assets/dashboard.gif';
 import interestRateEsimator from '../assets/interestEstimator.gif';
@@ -79,41 +79,54 @@ export default function Projects() {
                 </div>
               </div>
 
-              {/* Autonomous Driving Program Card */}
+              {/* Car Valuation App */}
               <div className="bg-white border-2 border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-lg transition-shadow flex flex-col h-full">
                 <img
-                  src={carImage}
-                  alt="Autonomous Driving Program"
+                  src={carImage} // replace with a GIF/PNG of your app if you have one
+                  alt="Used Car Valuation web app"
                   className="rounded-md mb-4 border"
                 />
                 <div className="flex flex-col flex-grow">
                   <h4 className="text-xl font-bold mb-2">
-                    Autonomous Driving Program
+                    Used Car Valuation from Listing or Photo
                   </h4>
                   <p className="text-gray-600 mb-4 flex-grow">
-                    An autonomous driving program using EV3 Lego and MATLAB.
-                  </p>
+                    A lightweight web tool that parses a car listing URL or image upload; uses the
+                    Gemini API to extract vehicle details, calls the CIS Automotive API for a baseline
+                    price, and applies backend logic to return a fair market range with comparable
+                    listings. Built with React and FastAPI, deployed on Vercel.                  </p>
                   <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
-                      MATLAB
-                    </span>
+                    <span className="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">React</span>
+                    <span className="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">JavaScript</span>
+                    <span className="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">FastAPI</span>
+                    <span className="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">Python</span>
+                    <span className="bg-pink-100 text-pink-800 text-sm font-medium px-3 py-1 rounded-full">Tailwind CSS</span>
+                    <span className="bg-gray-300 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">External APIs</span>
+                    <span className="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Vercel</span>
+                    <span className="bg-gray-300 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">GitHub</span>
                   </div>
                   <div className="mt-auto flex space-x-4">
                     <a
-                      href={`/view/autonomousDriving.m`}
+                      href="https://github.com/jk23399/car_valuation"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 text-center bg-gray-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors"
                     >
                       View Code
                     </a>
+                    <Link
+                      to="/car-valuation-report"
+                      className="flex-1 text-center bg-gray-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors"
+                    >
+                      View Report
+                    </Link>
                     <a
-                      href="https://youtube.com/shorts/LAghSF4Ig9g?feature=share"
+                      href="https://car-valuation-lyart.vercel.app/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 text-center bg-gray-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors"
                     >
-                      Watch Video
+                      Visit Website
                     </a>
                   </div>
                 </div>
