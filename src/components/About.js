@@ -11,7 +11,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold mb-6 text-center md:text-left">About</h2>
           <p className="text-3xl text-gray-700 leading-relaxed">
-            I’m a CS student at ASU with a strong interest in ML and data analysis applied to real products. I enjoy feature engineering, model evaluation, and wiring models into scalable backends.          </p>
+          I'm a CS student at ASU with hands-on experience building production applications. I combine strong CS fundamentals with practical development skills to create software that actually works.</p>
         </div>
       </div>
 
@@ -25,9 +25,9 @@ export default function About() {
               <img src={asuLogo} alt="Arizona State University Logo" className="w-16 h-16 object-contain flex-shrink-0" />
               <div>
                 <h3 className="text-2xl font-bold">Arizona State University</h3>
-                <p className="mt-1 text-lg text-gray-700">Bachelor's degree, Computer Science</p>
-                <p className="mt-1 text-base text-gray-600">Aug 2023 - May 2026</p>
-                <p className="mt-2 text-lg text-gray-700">Grade: 3.99</p>
+                <p className="mt-1 text-lg text-gray-700"> Bachelor of Science in Computer Science</p>
+                <p className="mt-1 text-base text-gray-600">Aug 2023 - Dec 2026 (Expected) </p>
+                <p className="mt-2 text-lg text-gray-700">Grade: 4.00</p>
                 <strong>Skills:</strong> Java · Python · C/C++
               </div>
             </li>
@@ -67,12 +67,14 @@ export default function About() {
                 <p className="text-base mt-1">Aug 2017 - Sep 2018</p>
               </div>
               <div className="md:w-3/4">
-                <h3 className="text-2xl font-bold">Technical Support / Intern</h3>
+              <h3 className="text-2xl font-bold">Technical Support / Intern</h3>
                 <ul className="mt-2 text-gray-700 leading-relaxed list-disc list-inside space-y-2 text-lg">
-                  {/* bullet points optional */}
+                  <li>Installed and maintained POS systems for merchant clients</li>
+                  <li>Provided technical support and troubleshooting for payment processing issues</li>
                 </ul>
               </div>
             </li>
+            {/*
             <li className="flex flex-col md:flex-row gap-6">
               <div className="md:w-1/4 text-gray-600 font-medium text-2xl">
                 <p>Republic of Korea Army</p>
@@ -81,7 +83,7 @@ export default function About() {
               <div className="md:w-3/4">
                 <h3 className="text-2xl font-bold">Operations & Intelligence Specialist</h3>
               </div>
-            </li>
+            </li>*/}
           </ul>
         </div>
       </div>
