@@ -16,6 +16,7 @@ import InterestRateReport from './components/InterestRateReport';
 import InterestRateEstimatorReport from "./components/InterestRateEstimatorReport";
 import CarValuationReport from './components/CarValuationReport'; 
 import SimplePOSReport from './components/SimplePOSReport';
+import OfflineABTesting from './components/OfflineABTesting';
 
 function App() {
   return (
@@ -50,7 +51,7 @@ function App() {
             <Route path="/car-valuation-report" element={<CarValuationReport />} />
             <Route path="/data-science-report" element={<DataScienceReport />} />
             <Route path="/simple-pos-report" element={<SimplePOSReport />} />
-            
+            <Route path="/offline-ab-testing-report" element={<OfflineABTesting />} />
             {/* App “View Program” page for the estimator */}
             <Route path="/credit-risk-analyzer" element={<InterestRateEstimatorReport />} />
           </Routes>

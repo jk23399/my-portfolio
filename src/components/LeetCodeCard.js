@@ -7,7 +7,6 @@ export default function LeetCodeCard() {
 
   return (
     <div className="bg-white border-2 border-gray-200 p-6 rounded-xl shadow-sm h-full hover:shadow-lg transition-shadow duration-300">
-      {/* --- LeetCode 동적 이미지 --- */}
       <a 
         href={`https://leetcode.com/u/${username}/`}
         target="_blank" 
@@ -21,7 +20,6 @@ export default function LeetCodeCard() {
         />
       </a>
 
-      {/* --- 2. 수동으로 추가된 Languages 섹션 --- */}
       <div className="mt-6 pt-6 border-t border-gray-200">
         <h4 className="text-xl font-bold mb-4 text-left">Languages</h4>
         <div className="space-y-3 text-lg">
