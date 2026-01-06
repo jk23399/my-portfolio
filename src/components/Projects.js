@@ -57,7 +57,7 @@ export default function Projects() {
                       View Code
                     </a>
                     <Link
-                      to="/credit-risk-analyzer"
+                      to="/simple-pos-report"
                       className="flex-1 text-center bg-gray-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors"
                     >
                       View Report

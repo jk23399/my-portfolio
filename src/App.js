@@ -13,8 +13,9 @@ import ScrollToTop from "./components/ScrollToTop";
 import SemiconductorReport from './components/SemiconductorReport';
 import LoanApprovalReport from './components/LoanApprovalReport';
 import InterestRateReport from './components/InterestRateReport';
-import InterestRateEstimatorReport from "./components/InterestRateEstimatorReport"; // <-- fixed name
-import CarValuationReport from './components/CarValuationReport'; // Import the new car valuation report component
+import InterestRateEstimatorReport from "./components/InterestRateEstimatorReport";
+import CarValuationReport from './components/CarValuationReport'; 
+import SimplePOSReport from './components/SimplePOSReport';
 
 function App() {
   return (
@@ -48,7 +49,8 @@ function App() {
             <Route path="/interest-rate-report" element={<InterestRateReport />} />
             <Route path="/car-valuation-report" element={<CarValuationReport />} />
             <Route path="/data-science-report" element={<DataScienceReport />} />
-
+            <Route path="/simple-pos-report" element={<SimplePOSReport />} />
+            
             {/* App “View Program” page for the estimator */}
             <Route path="/credit-risk-analyzer" element={<InterestRateEstimatorReport />} />
           </Routes>
