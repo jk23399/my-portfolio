@@ -23,8 +23,6 @@ export default function GeeksforGeeksCard() {
           <span className="text-blue-600 hover:underline">View Profile →</span>
         </div>
 
-        {/* --- 카드 중간 (수정된 부분) --- */}
-        {/* 이 div가 남는 공간을 모두 차지하고, 그 안에서 내용을 수직 중앙 정렬합니다. */}
         <div className="flex-grow flex flex-col justify-center">
           <div className="grid grid-cols-2 gap-4 text-center">
             <div>

@@ -25,10 +25,11 @@ export default function About() {
               <img src={asuLogo} alt="Arizona State University Logo" className="w-16 h-16 object-contain flex-shrink-0" />
               <div>
                 <h3 className="text-2xl font-bold">Arizona State University</h3>
-                <p className="mt-1 text-lg text-gray-700"> Bachelor of Science in Computer Science</p>
-                <p className="mt-1 text-base text-gray-600">Aug 2023 - Dec 2026 (Expected) </p>
+                <p className="mt-2 text-lg text-gray-700"> Bachelor of Science in Computer Science</p>
+                <p className="mt-2 text-base text-gray-600">Aug 2023 - Dec 2026 (Expected) </p>
                 <p className="mt-2 text-lg text-gray-700">Grade: 4.00</p>
-                <strong>Skills:</strong> Java · Python · C/C++
+                <p className="mt-2 text-lg text-gray-700">Dean's List: Fall 2024, Spring 2025, Fall 2025</p>
+                <p className="mt-2 text-lg text-gray-700"><strong>Skills:</strong> Java · Python · C/C++</p>
               </div>
             </li>
             {/* NOVA */}
@@ -36,8 +37,8 @@ export default function About() {
               <img src={novaLogo} alt="Northern Virginia Community College Logo" className="w-16 h-16 object-contain flex-shrink-0" />
               <div>
                 <h3 className="text-2xl font-bold">Northern Virginia Community College</h3>
-                <p className="mt-1 text-lg text-gray-700">Associate of Science - AS, Computer Science</p>
-                <p className="mt-1 text-base text-gray-600">Aug 2019 - May 2022</p>
+                <p className="mt-2 text-lg text-gray-700">Associate of Science - AS, Computer Science</p>
+                <p className="mt-2 text-base text-gray-600">Aug 2019 - May 2022</p>
                 <p className="mt-2 text-lg text-gray-700">Grade: 3.8</p>
               </div>
             </li>
@@ -46,10 +47,10 @@ export default function About() {
               <img src={kangnamLogo} alt="Kangnam University Logo" className="w-16 h-16 object-contain flex-shrink-0" />
               <div>
                 <h3 className="text-2xl font-bold">Kangnam University</h3>
-                <p className="mt-1 text-lg text-gray-700">Business Administration and Management, General</p>
-                <p className="mt-1 text-base text-gray-600">Jan 2011 - Aug 2017</p>
+                <p className="mt-2 text-lg text-gray-700">Business Administration and Management, General</p>
+                <p className="mt-2 text-base text-gray-600">Jan 2011 - Aug 2017</p>
                 <p className="mt-2 text-lg text-gray-700">Grade: 3.7</p>
-                <strong>Skills:</strong> Excel · PowerPoint
+                <p className="mt-2 text-lg text-gray-700"><strong>Skills:</strong> Excel · PowerPoint</p>
               </div>
             </li>
           </ul>
