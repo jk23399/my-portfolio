@@ -53,7 +53,7 @@ function App() {
             <Route path="/simple-pos-report" element={<SimplePOSReport />} />
             <Route path="/offline-ab-testing-report" element={<OfflineABTesting />} />
             {/* App “View Program” page for the estimator */}
-            <Route path="/credit-risk-analyzer" element={<InterestRateEstimatorReport />} />
+            <Route path="/interest-rate-estimator" element={<InterestRateEstimatorReport />} />
           </Routes>
         </main>
       </div>

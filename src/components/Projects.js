@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 // Import your project images
 import simplePOSpic from '../assets/SimplePOSpic.png';
 import ABTesting from '../assets/ABTesting.png';
-
+import InterestRateEstimator from '../assets/interestEstimator.gif';
 
 export default function Projects() {
   return (
@@ -91,6 +91,45 @@ export default function Projects() {
                     </a>
                     <Link
                       to="/offline-ab-testing-report"
+                      className="flex-1 text-center bg-gray-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors"
+                    >
+                      View Report
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              {/* InterestRateEstimator */}
+              <div className="bg-white border-2 border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-lg transition-shadow flex flex-col h-full">
+                <img
+                  src={InterestRateEstimator}
+                  alt="Credit Risk Analyzer"
+                  className="rounded-md mb-4 border"
+                />
+                <div className="flex flex-col flex-grow">
+                  <h4 className="text-xl font-bold mb-2">
+                    Interest Rate Estimator
+                  </h4>
+                  <p className="text-gray-600 mb-4 flex-grow">
+                  Combines classifier and regressor models to predict loan eligibility and estimate interest rates. Provides real-time inference through a REST API and a responsive dashboard.                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">Python</span>
+                    <span className="bg-purple-200 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">Pandas</span>
+                    <span className="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">Scikit-learn</span>
+                    <span className="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">Flask</span>
+                    <span className="bg-gray-300 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">React</span>
+                  </div>
+                  <div className="mt-auto flex space-x-4">
+                    <a
+                      href="https://github.com/jk23399/InterestRate_Estimator"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 text-center bg-gray-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors"
+                    >
+                      View Code
+                    </a>
+                    <Link
+                      to="/interest-rate-estimator"
                       className="flex-1 text-center bg-gray-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors"
                     >
                       View Report

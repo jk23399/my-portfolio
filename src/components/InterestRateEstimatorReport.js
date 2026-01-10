@@ -3,6 +3,7 @@ import interestRateEstimator from '../assets/interestEstimator.gif';
 import loanAnalysisGif from '../assets/loan_approval_prediction_pics/loan_analysis.gif';
 import interestRateBarchart from '../assets/interest_rate_prediction_pics/binned_comparison.png';
 import systemArchitecture from '../assets/interest_rate_estimator/sys_arc.png';
+import flow from '../assets/flow.png';
 
 export default function InterestRateEstimatorReport() {
   return (
@@ -54,15 +55,9 @@ export default function InterestRateEstimatorReport() {
         <article className="prose lg:prose-xl w-full px-4 sm:px-6 lg:px-8 mx-auto">
         <h2 className="text-3xl font-bold border-b-2 pb-2">1. Introduction</h2>
         <p className="mt-4">
-            This application accepts core financial inputs—loan purpose, loan amount, annual income,
-            credit score, and loan term—and returns both a credit decision and an interest rate
-            estimate. The backend stitches together two models in an end-to-end pipeline: a
-            <em> loan approval prediction </em> model that classifies approve vs reject, and, upon
-            approval, an <em>interest rate prediction</em> model that estimates a suitable APR for
-            the applicant. Both models originated from prior data-science work, using datasets that
-            were manually cleaned and refined before training. The goal here goes beyond modeling:
-            to package the models into a production-ready web app and deploy it for real, hands-on
-            usage. <br /> You can find the data EDA process, modeling steps, and model performance explanation in the links below.
+        This project bridges the gap between data science and real-world application. It’s an end-to-end web app that predicts loan approval odds and estimates interest rates based on user financial profiles.
+
+Instead of just analyzing data in a notebook, I deployed a production-ready pipeline where users get instant feedback. The system chains a Classifier (Approve/Reject) and a Regressor (Interest Rate) to deliver a seamless financial consultation experience.
           </p>
         </article>
 
@@ -113,7 +108,7 @@ export default function InterestRateEstimatorReport() {
         <img
           src={systemArchitecture}
           alt=""
-          className="w-full rounded-lg shadow-lg object-cover"
+          className="w-full rounded-lg shadow-lg object-cover mt-12"
         />
         <figcaption className="mt-3 text-center text-sm text-gray-500">
           Fig. 2 – System Architecture Overview
@@ -135,10 +130,9 @@ export default function InterestRateEstimatorReport() {
             <li>Submits a single JSON payload to backend and renders the combined result.</li>
         </ul>
 
-        <h3 className="text-2xl font-semibold mt-6">2.2 API</h3>
+        <h3 className="text-2xl font-semibold mt-6">2.2 Backend</h3>
         <ul>
-            <li>Flask REST API with input validation and CORS restricted to Vercel domain.</li>
-            <li>Main endpoint: <code>POST /predict</code>, returns decision + APR.</li>
+            <li>Backend (Flask): Serves two pre-trained Scikit-learn models from memory for low-latency inference.</li>
         </ul>
 
         <h3 className="text-2xl font-semibold mt-6">2.3 Model Serving</h3>
@@ -166,87 +160,45 @@ export default function InterestRateEstimatorReport() {
             an approval decision. If approved, the predicted APR and chosen term are displayed. 
             The design prioritizes speed, clarity, and mobile responsiveness.
         </p>
-
-        <h3 className="text-2xl font-semibold mt-6">3.1 Flow</h3>
+        <br></br>
         <ul>
-            <li>Loan Purpose → Loan Amount → Credit Score → Annual Income → Term → Result</li>
-            <li>Prefilled options & discrete inputs to minimize user error.</li>
-            <li>Progress bar and keyboard navigation for quick entry.</li>
-        </ul>
-
-        <h3 className="text-2xl font-semibold mt-6">3.2 UX Principles</h3>
-        <ul>
-            <li>Optimistic UI with instant step transitions.</li>
-            <li>“Calculating…” loading state; clear error messages with retry option.</li>
-            <li>Mobile-first responsive design, accessible controls, and clear focus states.</li>
-            <li>Privacy assurance banner: “No personal data stored”.</li>
-        </ul>
-
-        <h3 className="text-2xl font-semibold mt-6">3.3 API Contract</h3>
-        <ul>
-            <li>Single JSON request, single combined response from backend.</li>
-            <li>Client-side validation mirrors backend rules to reduce round-trips.</li>
+            Simple 5-Step Process: Users just click through 5 screens to get a result.
+            No Typing Needed: We used buttons and sliders so users don't make typing mistakes.
+            Fast & Easy: A progress bar shows how much is left, making it quick to finish.
+            <img
+              src={flow}
+              alt=""
+              className="w-full rounded-lg shadow-lg object-cover mt-12"
+            />
+            <figcaption className="mt-3 text-center text-sm text-gray-500">
+              Fig. 3 – Simple 5-Step Process
+            </figcaption>
         </ul>
         </section>
 
         
         {/* 4. Limitations & Next Steps */}
         <section className="prose lg:prose-xl w-full px-4 sm:px-6 lg:px-8 mx-auto mt-16">
-        <h2 className="text-3xl font-bold border-b-2 pb-2">4. Limitations &amp; Next Steps</h2>
+        <h2 className="text-3xl font-bold border-b-2 pb-2">4. Future Roadmap &amp; Next Steps</h2>
+        <h3 className="text-2xl font-semibold mt-6">4.1 Model Explainability</h3>
+        <p>
+        Currently, the decision is a "black box." I plan to implement SHAP values to visualize exactly why an applicant was approved or rejected (e.g., "Credit score contributed 30% to the decision").
+        </p>
 
-        <h3>4.1 Current Limitations</h3>
-        <ul>
-            <li>
-            <strong>Data representativeness:</strong> training data may not capture all borrower segments
-            (region, income distributions, macro cycles); out-of-distribution inputs can degrade accuracy.
-            </li>
-            <li>
-            <strong>Approval proxy:</strong> “approval” is modeled from historical outcomes, not a real
-            underwriting policy; use for educational/demo purposes only.
-            </li>
-            <li>
-            <strong>Drift &amp; recalibration:</strong> APRs and approval thresholds can drift as markets change;
-            no automatic drift detection is enabled yet.
-            </li>
-            <li>
-            <strong>Explainability:</strong> feature attributions are not surfaced in the UI; users cannot
-            see <em>why</em> a decision was made.
-            </li>
-            <li>
-            <strong>Inputs:</strong> limited to a compact set (purpose, amount, income, score, term); missing
-            debt-to-income, employment length, delinquencies, etc.
-            </li>
-            <li>
-            <strong>Operational guardrails:</strong> basic rate limiting only; no per-client API keys or quotas.
-            </li>
-        </ul>
+        <h3 className="text-2xl font-semibold mt-6">4.2 Feature Enrichment</h3>
+        <p>
+        To improve real-world accuracy, I will incorporate advanced financial metrics like Debt-to-Income (DTI) ratio and employment history.
+        </p>
 
-        <h3>4.2 Next Steps</h3>
-        <ul>
-            <li>
-            <strong>Monitoring:</strong> add input/feature drift alerts, model performance dashboards, and
-            shadow testing for new versions.
-            </li>
-            <li>
-            <strong>Calibration &amp; fairness:</strong> periodic probability/APR calibration; bias checks across
-            relevant subgroups (where legally/ethically appropriate).
-            </li>
-            <li>
-            <strong>Explainability:</strong> expose SHAP-style attributions and “what-if” sliders for amount/term/score.
-            </li>
-            <li>
-            <strong>Richer features:</strong> incorporate DTI, employment length, loan history; secure collection with
-            client-side masking and server-side validation.
-            </li>
-            <li>
-            <strong>Productization:</strong> API keys, per-tenant limits, audit logging, and canary deploys; PDF
-            “pre-qualification” summary download.
-            </li>
-            <li>
-            <strong>UX enhancements:</strong> localization (i18n), multiple currencies, scenario comparison (e.g., 36 vs 48 months),
-            and accessibility audits.
-            </li>
-        </ul>
+        <h3 className="text-2xl font-semibold mt-6">4.3 MLOps & Monitoring</h3>
+        <p>
+        Interest rates fluctuate constantly. I aim to build a Drift Detection system that monitors market trends and triggers model retraining automatically.
+        </p>
+
+        <h3 className="text-2xl font-semibold mt-6">4.4 API Security</h3>
+        <p>
+        Implement Rate Limiting and API Keys to prevent abuse and manage traffic effectively.
+        </p>
         </section>
 
 
