@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import simplePOSpic from '../assets/SimplePOSpic.png';
 import ABTesting from '../assets/ABTesting.png';
 import InterestRateEstimator from '../assets/interestEstimator.gif';
+import distPOS from '../assets/distPOS.png';
 
 export default function Projects() {
   return (
@@ -51,6 +52,47 @@ export default function Projects() {
                     </a>
                     <Link
                       to="/simple-pos-report"
+                      className="flex-1 text-center bg-gray-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors"
+                    >
+                      View Report
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              {/* Distributed POS System */}
+              <div className="bg-white border-2 border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-lg transition-shadow flex flex-col h-full">
+                <img
+                  src={distPOS}
+                  alt="Distributed POS System"
+                  className="rounded-md mb-4 border"
+                />
+                <div className="flex flex-col flex-grow">
+                  <h4 className="text-xl font-bold mb-2">
+                    Distributed POS System Migration (In Progress)
+                  </h4>
+                  <p className="text-gray-600 mb-4 flex-grow">
+                     Migrating a standalone Android POS to a distributed cloud architecture using AWS and Spring Boot. 
+                     <br></br>Focuses on solving concurrency challenges (Race Conditions) and enabling real-time multi-device synchronization.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">Spring Boot</span>
+                    <span className="bg-purple-200 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">REST API</span>
+                    <span className="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">MySQL</span>
+                    <span className="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">AWS</span>
+                    <span className="bg-gray-300 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">GitHub</span>
+                  </div>
+                  <div className="mt-auto flex space-x-4">
+                    <a
+                      href="https://github.com/jk23399/simple-pos-backend"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 text-center bg-gray-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors"
+                    >
+                      View Code
+                    </a>
+                    <Link
+                      to="/dist-pos-report"
                       className="flex-1 text-center bg-gray-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors"
                     >
                       View Report
