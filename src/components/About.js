@@ -1,7 +1,7 @@
 import React from 'react';
 import asuLogo from '../assets/asu_logo.jpeg';
 import novaLogo from '../assets/nova_logo.jpeg';
-import kangnamLogo from '../assets/kangnam_logo.jpeg';
+// import kangnamLogo from '../assets/kangnam_logo.jpeg';
 
 export default function About() {
   return (
@@ -11,7 +11,8 @@ export default function About() {
         <div className="max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold mb-6 text-center md:text-left">About</h2>
           <p className="text-3xl text-gray-700 leading-relaxed">
-          I'm a CS student at ASU with hands-on experience building production applications. I combine strong CS fundamentals with practical development skills to create software that actually works.</p>
+         I build software that solves real-world problems. As a Computer Science student at ASU, I combine deep algorithmic understanding with practical engineering skills to create reliable, production-ready applications like custom POS systems.
+          </p>
         </div>
       </div>
 
@@ -42,7 +43,7 @@ export default function About() {
                 <p className="mt-2 text-lg text-gray-700">Grade: 3.8</p>
               </div>
             </li>
-            {/* Kangnam */}
+            {/* Kangnam 
             <li className="flex items-start gap-6">
               <img src={kangnamLogo} alt="Kangnam University Logo" className="w-16 h-16 object-contain flex-shrink-0" />
               <div>
@@ -53,6 +54,7 @@ export default function About() {
                 <p className="mt-2 text-lg text-gray-700"><strong>Skills:</strong> Excel · PowerPoint</p>
               </div>
             </li>
+            */}
           </ul>
         </div>
       </div>

@@ -32,7 +32,7 @@ export default function Footer() {
           <FaEnvelope size={36} />
         </a>
         <a
-          href="/files/Your_Resume.pdf"
+          href="/Jooho_Kim_Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Download CV"
