@@ -1,5 +1,4 @@
 import avatar from '../assets/your_avatar.jpg';
-import ABTesting from '../assets/ABTesting.png';
 import slide1 from '../assets/Offline_ABTesting/Slide1.jpeg';
 import slide2 from '../assets/Offline_ABTesting/Slide2.jpeg';
 import slide3 from '../assets/Offline_ABTesting/Slide3.jpeg';
