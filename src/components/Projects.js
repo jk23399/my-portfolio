@@ -84,7 +84,7 @@ export default function Projects() {
                   </div>
                   <div className="mt-auto flex space-x-4">
                     <a
-                      href="https://github.com/jk23399/simple-pos-backend"
+                      href="https://github.com/jk23399/DistributedPOS"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 text-center bg-gray-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-800 transition-colors"
